@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        java -jar ./TestSmellDetector.jar ./Ejemplo.csv
+        java -jar ./TestSmellDetector.jar Ejemplo.csv
       }
     }
   }
