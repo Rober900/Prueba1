@@ -12,6 +12,7 @@ pipeline {
   }
   post {
     success {
-      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '**/', reportFiles: 'Output.html', reportName: 'Test Smell Report', reportTitles: '', useWrapperFileDirectly: true])    }
+      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './', reportFiles: 'Output.html', reportName: 'Test Smell Report', reportTitles: '', useWrapperFileDirectly: true])    
+    }
   }
 }
