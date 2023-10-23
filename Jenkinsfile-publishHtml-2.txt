@@ -6,6 +6,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        sh './mvnw clean install site surefire-report:report'
+        sh './mvnw clean package'
         java -jar ./TestSmellDetector-0.1-jar-with-dependencies.jar Ejemplo.csv
       }
     }
