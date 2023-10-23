@@ -6,8 +6,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        cd ./target
-        java -jar ./TestSmellDetector-0.1-jar-with-dependencies.jar Ejemplo.csv
+        sh 'cd ./target'
+        sh 'java -jar ./TestSmellDetector-0.1-jar-with-dependencies.jar Ejemplo.csv'
       }
     }
   }
