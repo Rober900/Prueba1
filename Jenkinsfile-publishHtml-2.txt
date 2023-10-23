@@ -6,13 +6,13 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        java -jar ./TestSmellDetector.jar Ejemplo.csv
+        java -jar ./TestSmellDetector-0.1-jar-with-dependencies.jar Ejemplo.csv
       }
     }
   }
   post {
     success {
-      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target', reportFiles: 'surefire-report.html', reportName: 'Surefire Report', reportTitles: '', useWrapperFileDirectly: true])
+      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site', reportFiles: 'Output.html', reportName: 'Output Report', reportTitles: '', useWrapperFileDirectly: true])
     }
   }
 }
